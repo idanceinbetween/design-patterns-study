@@ -10,3 +10,5 @@ I'm using the following resources to help:
 
 ### Unofficial snippets 👀
 - `Every.builder(should).just(be).a(constructor).build()` / "The Builder Pattern: For when it's just too hard to define only the legal states in the type system." - [James Ward's tweet](https://twitter.com/_JamesWard/status/1316509629044658176)
+- And many other net opinions
+
