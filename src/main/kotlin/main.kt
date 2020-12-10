@@ -1,5 +1,7 @@
+import Prototype.runPrototype
 import Singleton.runSingleton
 
-fun main(args: Array<String>) {
-    runSingleton()
+fun main() {
+//    runSingleton()
+    runPrototype()
 }
