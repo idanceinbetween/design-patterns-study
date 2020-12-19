@@ -5,5 +5,5 @@ import factory.runFactory
 fun main() {
 //    runSingleton()
 //    runPrototype()
-    runFactory()
+    runFactory("dog")
 }

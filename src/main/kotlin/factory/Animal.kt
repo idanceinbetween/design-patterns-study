@@ -1,5 +1,6 @@
 package factory
 
+// this interface is needed by the Animal Factory
 interface Animal {
     fun speak()
     fun preferredAction()
