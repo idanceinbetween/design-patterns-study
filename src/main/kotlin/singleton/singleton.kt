@@ -1,4 +1,4 @@
-package Singleton
+package singleton
 
 // Kotlin has made creating Singletons easy
 // Object declaration's initialization is thread-safe and done at first access
