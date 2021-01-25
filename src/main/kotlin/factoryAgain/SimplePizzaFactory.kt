@@ -22,78 +22,50 @@ class SimplePizzaFactory {
 interface Pizza {
     fun prepare()
     fun bake()
-    fun cut()
-    fun box()
-}
-
-class CheesePizza : Pizza {
-    override fun prepare() {
-        TODO("Not yet implemented")
+    fun cut() {
+        println("Cut into slices")
     }
-
-    override fun bake() {
-        TODO("Not yet implemented")
-    }
-
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
+    fun box() {
+        println("Put in official PizzaStore box")
     }
 }
 
-class GreekPizza : Pizza {
+open class CheesePizza : Pizza {
     override fun prepare() {
-        TODO("Not yet implemented")
+        println("Add some cheese")
     }
 
     override fun bake() {
-        TODO("Not yet implemented")
-    }
-
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
+        println("Put in oven for 15 mins for cheese to melt")
     }
 }
 
-class PepperoniPizza : Pizza {
+open class GreekPizza : Pizza {
     override fun prepare() {
-        TODO("Not yet implemented")
+        println("Add some olives")
     }
 
     override fun bake() {
-        TODO("Not yet implemented")
-    }
-
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
+        println("Put in oven for 10 mins so olives don't burn")
     }
 }
 
-class VeggiePizza : Pizza {
+open class PepperoniPizza : Pizza {
     override fun prepare() {
-        TODO("Not yet implemented")
+        println("Add pepperoni with black pepper")
     }
 
     override fun bake() {
-        TODO("Not yet implemented")
+        println("Put in oven for 30 mins so meat is cooked")
+    }
+}
+
+open class VeggiePizza : Pizza {
+    override fun prepare() {
+        println("Add some vege yum")
     }
 
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
+    override fun bake() {
+        println("Put in oven for 20 mins so vege is sightly burnt")
     }
 }
