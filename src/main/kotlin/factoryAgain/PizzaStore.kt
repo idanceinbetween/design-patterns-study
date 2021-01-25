@@ -1,19 +1,11 @@
 package factoryAgain
 
-class PizzaStore {
+// the client of the factory
+class PizzaStore(private val simplePizzaFactory: SimplePizzaFactory) {
     fun orderPizza(type: String): Pizza {
-        lateinit var pizza: Pizza
 
-        // new-ing things up during runtime.
-        // if we need other pizzas we have to change this section of code
-        // even though the rest of the code stays the same
-        // i.e. code is not closed for modification
-        when (type) {
-            "cheese" -> pizza = CheesePizza()
-            "greek" -> pizza = GreekPizza()
-            "pepperoni" -> pizza = PepperoniPizza()
-            "veggie" -> pizza = VeggiePizza()
-        }
+        // Use a factory to replace the instantiation of concrete classes
+        val pizza = simplePizzaFactory.createPizza(type)
 
         pizza.prepare()
         pizza.bake()
@@ -24,81 +16,4 @@ class PizzaStore {
     }
 }
 
-interface Pizza {
-    fun prepare()
-    fun bake()
-    fun cut()
-    fun box()
-}
-
-class CheesePizza : Pizza {
-    override fun prepare() {
-        TODO("Not yet implemented")
-    }
-
-    override fun bake() {
-        TODO("Not yet implemented")
-    }
-
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
-    }
-}
-
-class GreekPizza : Pizza {
-    override fun prepare() {
-        TODO("Not yet implemented")
-    }
-
-    override fun bake() {
-        TODO("Not yet implemented")
-    }
-
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
-    }
-}
-
-class PepperoniPizza : Pizza {
-    override fun prepare() {
-        TODO("Not yet implemented")
-    }
-
-    override fun bake() {
-        TODO("Not yet implemented")
-    }
-
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
-    }
-}
-
-class VeggiePizza : Pizza {
-    override fun prepare() {
-        TODO("Not yet implemented")
-    }
-
-    override fun bake() {
-        TODO("Not yet implemented")
-    }
-
-    override fun cut() {
-        TODO("Not yet implemented")
-    }
-
-    override fun box() {
-        TODO("Not yet implemented")
-    }
-}
+// The Pizza Store no longer needs to know the ins and outs of Pizza types
