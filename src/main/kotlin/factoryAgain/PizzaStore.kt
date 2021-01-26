@@ -25,7 +25,13 @@ abstract class PizzaStore {
     }
 
     // Factory method is now abstract in Pizza Store
-    // no need to implement this now
+    // no need to implement this now.
+    // If there is only one and only Pizza Store
+    // and it is actually creating all the
+    // different types of pizzas that could be made,
+    // it violates the Dependency Inversion Principle,
+    // i.e. the Pizza Store class has too many
+    // concrete classes as dependencies
     abstract fun createPizza(type: String): Pizza
 }
 

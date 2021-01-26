@@ -1,6 +1,6 @@
 package factoryAgain
 
-// the only part of the code that refers to concrete pizza classes
+// the only part of the code that refers to concrete pizza classes before the PizzaStore went franchising!
 class SimplePizzaFactory {
     fun createPizza(type: String): Pizza {
         lateinit var pizza: Pizza
