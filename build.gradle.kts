@@ -16,6 +16,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.6")
 
     testImplementation(kotlin("test-junit5"))
+    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.23.1")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.2")
 }
