@@ -1,14 +1,29 @@
 package factoryAgain
 
 class NYStylePizzaStore : PizzaStore() {
+    private lateinit var pizza: Pizza
+
     override fun createPizza(type: String): Pizza {
-        return when (type) {
-            "cheese" -> NYCheesePizza()
-            "greek" -> NYGreekPizza()
-            "pepperoni" -> NYPepperoniPizza()
-            "veggie" -> NYVeggiePizza()
+        when (type) {
+            "cheese" -> {
+                pizza = NYCheesePizza()
+                pizza.name = "New York Cheese Pizza"
+            }
+            "greek" -> {
+                pizza = NYGreekPizza()
+                pizza.name = "New York Greek Pizza"
+            }
+            "pepperoni" -> {
+                pizza = NYPepperoniPizza()
+                pizza.name = "New York Pepperoni Pizza"
+            }
+            "veggie" -> {
+                pizza = NYVeggiePizza()
+                pizza.name = "New York Veggie Pizza"
+            }
             else -> throw RuntimeException("specified pizza [$type] is unavailable")
         }
+        return pizza
     }
 
     class NYCheesePizza : CheesePizza()

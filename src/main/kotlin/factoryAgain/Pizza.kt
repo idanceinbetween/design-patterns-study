@@ -24,8 +24,13 @@ abstract class Pizza {
 }
 
 open class CheesePizza : Pizza() {
+    private lateinit var ingredientFactory: PizzaIngredientFactory
+
     override fun prepare() {
-        println("Add some cheese")
+        println("Preparing $name")
+        ingredientFactory.createDough()
+        ingredientFactory.createSauce()
+        ingredientFactory.createCheese()
     }
 }
 
