@@ -17,6 +17,8 @@ The Observer Pattern defines a one-to-many dependency between objects so that wh
 3. Observers each has an action when that observed variable changes
 4. `with subject`, assign new value to the observed variable
 
+Reference: [dbacinski's Design Patterns In Kotlin project](https://github.com/dbacinski/Design-Patterns-In-Kotlin/blob/master/patterns/src/test/kotlin/Listener.kt)
+
 ## Usage
 
 - It is built in support for broadcast communication.
