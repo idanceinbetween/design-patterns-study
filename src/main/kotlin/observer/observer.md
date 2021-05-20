@@ -11,7 +11,7 @@ The Observer Pattern defines a one-to-many dependency between objects so that wh
     - The only thing a Subject knows is that there is an observer interface, but doesn't know who the concrete observers are.
     - We could even replace who the concrete observers are at Runtime, and all will still be good
 
-### Attempt No 1:
+### Attempt:
 1. Subject has list of observers
 2. Subject has an instance variable that is observed by observers (`by Delegates observable {call back for the listeners}`)
 3. Observers each has an action when that observed variable changes
@@ -24,7 +24,6 @@ Reference: [dbacinski's Design Patterns In Kotlin project](https://github.com/db
 - It is built in support for broadcast communication.
   - When visualising it, a newspaper subscription service with its publisher and subscribers is a good way to understand it.
 - Most useful in Reactive programming.
-- Instead of implementing a full observer class, we could use lambda expressions to simplify the code (see example).
 - Vs other design patterns:
   - Structurally similar to Bridge, but the intention is different.
   - Mediator may be used to mediate between several subjects and observers. 
@@ -33,9 +32,11 @@ Reference: [dbacinski's Design Patterns In Kotlin project](https://github.com/db
 
 - There might be unexpected updates
 - It may be expensive and untimely
+- [Lapsed Listener Problem blog post](https://ilkinulas.github.io/development/general/2016/04/17/observer-pattern.html)
+  - Remember to deregister an observer when the time comes
+  - Use `WeakReference` [WeakReference In Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.native.ref/-weak-reference/)
 
 ## Other notes
 - [Observer Is Deprecated In Java 9. What should we use instead of it](https://stackoverflow.com/questions/46380073/observer-is-deprecated-in-java-9-what-should-we-use-instead-of-it)
 - https://www.agilelearner.com/presentation/418
 - https://github.com/dbacinski/Design-Patterns-In-Kotlin#observer--listener
-- https://medium.com/@ahmedrizwan/kotlin-design-patterns-the-observer-fc8e5a702b4c
