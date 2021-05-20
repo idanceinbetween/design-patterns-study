@@ -18,7 +18,11 @@ class Stock {
     })
     */
     // Is this meant to be here? Seems like the subject now also knows about the observers' method
+    // [Follow up to Q above] Y, observers here is only the interface, so no problem. Observer can do whatever it
+    // wants within this public method.
     // Also seems quite messy to have the instance variable declared and observed
+    // [Follow up on Q above] Y, if we follow this method. Will attempt the second
+    // time to enable more properties being observed.
     private var value: Double by Delegates.observable(0.0) { _, _, newValue ->
         listOfListeners.map { listener -> listener.onStockChange(newValue) }
     }
