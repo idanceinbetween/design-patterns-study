@@ -1,4 +1,3 @@
-import factoryAgain.runFactoryAgain
 import observer.runObserver
 
 fun main() {
