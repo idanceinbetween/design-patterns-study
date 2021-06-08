@@ -1,9 +1,10 @@
-import observer.runObserver
+import decorator.runDecorator
 
 fun main() {
 //    runSingleton()
 //    runPrototype()
 //    runFactory("dog")
 //    runFactoryAgain()
-    runObserver()
+//    runObserver()
+    runDecorator()
 }
